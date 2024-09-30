@@ -374,6 +374,14 @@ def get_jlink_srch_path(exe_name: str):
 
     install_roots = []
     jlink_installs = []
+ 
+     # For now just hard-code the default install paths. Don't include default search path due to
+    # conflicts with java's linker. User can still override with an explicit JLINK=... on the
+    # command line.
+    return [
+        "C:\\Program Files\\SEGGER\\JLink",
+        "D:\\SEGGER\\JLink_V798i",
+    ]
 
     if Utils.is_win32:
 
